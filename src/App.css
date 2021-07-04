@@ -1,4 +1,18 @@
 .App {
   text-align: center;
 }
+.box-style {
+    background-color: #3f51b5;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5em;
+}
 
+.date-update {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8em;
+}
