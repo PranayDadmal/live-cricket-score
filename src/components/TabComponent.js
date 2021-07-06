@@ -9,6 +9,7 @@ import Score from './Score';
 
 
 
+
 function TabComponent() {
    const [value, setValue] = useState(0);
    const [matches, setMatches] = useState([]);
@@ -18,7 +19,10 @@ function TabComponent() {
           console.log(data);
           setMatches(data.matches);
           console.log(data.matches);
-     }).catch(error => console.log(error));
+     }).catch(error => {
+       console.log(error);
+       alert("something went wrong!!! Please check your internet connection");
+     });
    },[])
  
    const changeHandler = (e, value) => {
@@ -32,7 +36,7 @@ function TabComponent() {
            <>
              {match.type === format ? 
              <Box display="flex" justifyContent="center" alignItems="center">
-               <Score key={match.unique_key} match={match}/> 
+               <Score key={match.unique_id} match={match}/> 
              </Box>
              : "" }
            </>
@@ -55,20 +59,25 @@ function TabComponent() {
     return (
         <>
             <Tabs value={value} onChange={changeHandler} indicatorColor="primary"  >
-              <Tab label="ONE DAY" />
+              <Tab label="First Class" />
+              <Tab label="ODI" />
               <Tab label="TWENTY 20" />
               <Tab label="TEST" />
             </Tabs>
 
            <TabPanel index={0} value={value}  >
-             {getContent('')}
+             {getContent('First-class')}
            </TabPanel>
            <TabPanel index={1} value={value} >
-             {getContent('Twenty20')}
+             {getContent('ODI')}
            </TabPanel>
            <TabPanel index={2} value={value} >
+             {getContent('Twenty20')}
+           </TabPanel>
+           <TabPanel index={3} value={value} >
              {getContent('Tests')} 
            </TabPanel>
+           <Typography style={{margin:'20px'}} color="initial">No more matches....</Typography>
         </>
     )
 }

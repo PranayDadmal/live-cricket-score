@@ -1,4 +1,4 @@
-const API_KEY = "9sc2M4YZYHdJlZdhsjKuc8eLYr43" ;
+const API_KEY = "8ShApIDr4JYeU2SsWqvFO5rLyQx2" ;
 
 export const getMatches = () => {
     const url = `https://cricapi.com/api/matches?apikey=${API_KEY}`;
@@ -9,8 +9,9 @@ export const getMatches = () => {
 
 };
 
-export const getMatchDetails = (id) => {
-    const url = `https://cricapi.com/api/matches?apikey=${API_KEY}&unique_id=${id}`;
+export const getMatchDetails = (props) => {
+    const id = props;
+    const url = `https://cricapi.com/api/cricketScore?apikey=${API_KEY}&unique_id=${id}`;
     
     return fetch(url)
     .then(res => res.json())

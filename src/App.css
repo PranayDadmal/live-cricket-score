@@ -16,3 +16,15 @@
   align-items: flex-start;
   margin-bottom: 0.8em;
 }
+
+.card {
+  background-color:  #3f51b5;
+  margin-top: 20px;
+  width:700px
+}
+.card-area {
+  background-color: #f3f3f3;
+}
+.team-color {
+  font-size: medium;
+}
